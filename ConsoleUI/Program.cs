@@ -3,44 +3,6 @@ using System.Collections.Generic;
 
 namespace ConsoleUI
 {
-    public abstract class Vehicle
-    {
-        public string Year { get; set; } = "Unknown Year";
-        public string Make { get; set; } = "Unknown Make";
-        public string Model { get; set; } = "Unknown Model";
-
-        public abstract void DriveAbstract();
-        public virtual void DriveVirtual()
-        {
-            Console.WriteLine("This is a generic vehicle driving.");
-        }
-    }
-
-    public class Car : Vehicle
-    {
-        public bool HasTrunk { get; set; }
-
-        public override void DriveAbstract()
-        {
-            Console.WriteLine("The car is driving.");
-        }
-    }
-
-    public class Motorcycle : Vehicle
-    {
-        public bool HasSideCart { get; set; }
-
-        public override void DriveAbstract()
-        {
-            Console.WriteLine("The motorcycle is driving.");
-        }
-
-        public override void DriveVirtual()
-        {
-            Console.WriteLine("This motorcycle is driving differently.");
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -49,7 +11,7 @@ namespace ConsoleUI
             List<Vehicle> vehicles = new List<Vehicle>();
 
             /*
-             * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
+             * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constructors from derived classes
              * 
              * Set the properties values with object initializer syntax
              */
